@@ -1,3 +1,7 @@
+import com.banco.contas.implementacao.*;
+import com.banco.contas.*;
+import com.banco.estabelecimento.*;
+
 import java.util.ArrayList;
 
 public class Main {

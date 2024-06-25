@@ -1,11 +1,13 @@
-public class Cliente {
+package com.banco.estabelecimento;
+
+public class Banco {
     private String nome;
 
     public String getNome() {
         return nome;
     }
 
-    public Cliente(String nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
 }

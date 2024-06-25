@@ -1,3 +1,7 @@
+package com.banco.contas.implementacao;
+
+import com.banco.estabelecimento.Cliente;
+
 public abstract class Conta implements InterfaceConta {
     private static int SEQUENCIAL = 1;
     private static int AGENCIA_PADRAO = 1;
@@ -47,7 +51,7 @@ public abstract class Conta implements InterfaceConta {
 
     @Override
     public String toString() {
-        return "Conta{" +
+        return "com.banco.contas.implementacao.Conta{" +
                 "agencia=" + agencia +
                 ", numero=" + numero +
                 ", saldo=" + saldo +

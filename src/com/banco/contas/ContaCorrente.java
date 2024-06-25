@@ -1,3 +1,8 @@
+package com.banco.contas;
+
+import com.banco.contas.implementacao.Conta;
+import com.banco.estabelecimento.Cliente;
+
 public class ContaCorrente extends Conta {
     public ContaCorrente(Cliente cliente) {
         super(cliente);
