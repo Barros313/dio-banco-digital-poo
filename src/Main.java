@@ -1,9 +1,21 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        ContaCorrente conta = new ContaCorrente();
-        ContaPoupanca poupanca = new ContaPoupanca();
+        Cliente gabrielBarros = new Cliente("Gabriel Barros");
 
-        System.out.println(conta.toString());
-        System.out.println(poupanca.toString());
+        Conta corrente = new ContaCorrente(gabrielBarros);
+        Conta poupanca = new ContaPoupanca(gabrielBarros);
+
+        corrente.depositar(100);
+        poupanca.depositar(100);
+
+        corrente.transferir(50, poupanca);
+
+        ArrayList<Conta> contas = new ArrayList<>();
+        contas.add(corrente);
+        contas.add(poupanca);
+
+        contas.forEach(InterfaceConta::imprimirExtrato);
     }
 }

@@ -5,10 +5,12 @@ public abstract class Conta implements InterfaceConta {
     protected int agencia;
     protected int numero;
     protected double saldo;
+    private final Cliente cliente;
 
-    public Conta() {
+    public Conta(Cliente cliente) {
         this.agencia = AGENCIA_PADRAO++;
         this.numero = SEQUENCIAL++;
+        this.cliente = cliente;
     }
 
     public int getAgencia() {
@@ -23,9 +25,25 @@ public abstract class Conta implements InterfaceConta {
         return saldo;
     }
 
-    public void sacar(double valor) {}
-    public void depositar(double valor) {}
-    public void transferir(double valor, Conta contaDestino) {}
+    public void sacar(double valor) {
+        saldo -= valor;
+    }
+
+    public void depositar(double valor) {
+        saldo += valor;
+    }
+
+    public void transferir(double valor, Conta contaDestino) {
+        this.sacar(valor);
+        contaDestino.depositar(valor);
+    }
+
+    protected void imprimirDados() {
+        System.out.printf("Titular: %s%n%n", this.cliente.getNome());
+        System.out.printf("Agência: %d%n", this.getAgencia());
+        System.out.printf("Número: %d%n", this.getNumero());
+        System.out.printf("Saldo: %.2f%n%n", this.getSaldo());
+    }
 
     @Override
     public String toString() {
