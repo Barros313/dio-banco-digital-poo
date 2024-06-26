@@ -2,10 +2,11 @@ package com.banco.contas;
 
 import com.banco.contas.implementacao.Conta;
 import com.banco.estabelecimento.Cliente;
+import com.banco.estabelecimento.Banco;
 
 public class ContaCorrente extends Conta {
-    public ContaCorrente(Cliente cliente) {
-        super(cliente);
+    public ContaCorrente(Cliente cliente, Banco banco) {
+        super(cliente, banco);
     }
 
     @Override
