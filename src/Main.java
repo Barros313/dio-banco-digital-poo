@@ -7,9 +7,21 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Cliente gabrielBarros = new Cliente("Gabriel Barros");
+        Endereco enderecoNubank = new Endereco(
+                "Brasil",
+                "SP",
+                "São Paulo",
+                "Pinheiros",
+                "05409-000",
+                "Rua Capote Verde",
+                "39",
+                ""
+        );
 
-        Conta corrente = new ContaCorrente(gabrielBarros);
-        Conta poupanca = new ContaPoupanca(gabrielBarros);
+        Banco nubank = new Banco("Nubank", enderecoNubank);
+
+/*        Conta corrente = new ContaCorrente(gabrielBarros, nubank);
+        Conta poupanca = new ContaPoupanca(gabrielBarros, nubank);
 
         corrente.depositar(100);
         poupanca.depositar(100);
@@ -20,6 +32,8 @@ public class Main {
         contas.add(corrente);
         contas.add(poupanca);
 
-        contas.forEach(InterfaceConta::imprimirExtrato);
+        contas.forEach(InterfaceConta::imprimirExtrato);*/
+
+        nubank.getEndereco();
     }
 }
